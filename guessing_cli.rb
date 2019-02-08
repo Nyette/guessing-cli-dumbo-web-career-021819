@@ -7,11 +7,15 @@ def run_guessing_game
   if user_guess.class == String
     if user_guess.to_i == random_number
       puts "You guessed the correct number!"
+    elsif user_guess == "exit"
+      puts "Goodbye!"
+    elsif user_guess.to_i != random_number
+      puts "The computer guessed #{random_number}."
     else
-      puts "You guessed the wrong number!"
-  elsif user_guess == "exit"
-    puts "Goodbye!"
-  else
-    puts "The computer guessed #{random_number}."
-  end
-end
+      puts "Invalid input! Please try again."
+    end
+  elsif user_guess.class == Integer
+    if user_guess == random_number
+      puts "You guesse the correct number!"
+    else
+      puts 
